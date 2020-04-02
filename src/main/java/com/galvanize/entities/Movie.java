@@ -20,7 +20,8 @@ public class Movie {
     private List<String> actors;
 
     @Column(name= "director")
-    private String director;
+    @ElementCollection(targetClass=String.class)
+    private List<String> director;
 
     @Column(name ="title")
     private String title;
@@ -34,7 +35,7 @@ public class Movie {
     public Movie(){}
 
 
-    public Movie(String imdbId, List<String> actors, String director, String title, String year, Date releasedDate) {
+    public Movie(String imdbId, List<String> actors, List<String> director, String title, String year, Date releasedDate) {
         this.imdbId = imdbId;
         this.actors = actors;
         this.director = director;
@@ -67,11 +68,11 @@ public class Movie {
         this.actors = actors;
     }
 
-    public String getDirector() {
+    public List<String> getDirector() {
         return director;
     }
 
-    public void setDirector(String director) {
+    public void setDirector(List<String> director) {
         this.director = director;
     }
 
