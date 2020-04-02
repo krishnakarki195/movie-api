@@ -25,7 +25,8 @@ class MovieTest {
         String title = "Movie Title";
         String year = "2016";
         Date releasedDate = Date.valueOf(LocalDate.of(1962, 11, 16));
-        Movie movie = new Movie(imdb_id,actors,director,title,year,releasedDate);
+        String stars = "3";
+        Movie movie = new Movie(imdb_id,actors,director,title,year,releasedDate, stars);
         assertNotNull(movie);
         assertEquals("2016", movie.getYear());
     }

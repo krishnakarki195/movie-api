@@ -10,6 +10,7 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "movie_id")
     private Long id;
 
     @Column(name="imdb_id")
@@ -32,16 +33,20 @@ public class Movie {
     @Column(name="released")
     private Date releasedDate;
 
+    @Column(name = "stars")
+    private String stars;
+
     public Movie(){}
 
 
-    public Movie(String imdbId, List<String> actors, List<String> director, String title, String year, Date releasedDate) {
+    public Movie(String imdbId, List<String> actors, List<String> director, String title, String year, Date releasedDate, String stars) {
         this.imdbId = imdbId;
         this.actors = actors;
         this.director = director;
         this.title = title;
         this.year = year;
         this.releasedDate = releasedDate;
+        this.stars = stars;
     }
 
     public Long getId() {
@@ -100,16 +105,25 @@ public class Movie {
         this.releasedDate = releasedDate;
     }
 
+    public String getStars() {
+        return stars;
+    }
+
+    public void setStars(String stars) {
+        this.stars = stars;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
                 "id=" + id +
                 ", imdbId='" + imdbId + '\'' +
                 ", actors=" + actors +
-                ", director='" + director + '\'' +
+                ", director=" + director +
                 ", title='" + title + '\'' +
                 ", year='" + year + '\'' +
                 ", releasedDate=" + releasedDate +
+                ", stars='" + stars + '\'' +
                 '}';
     }
 
