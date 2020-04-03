@@ -33,9 +33,14 @@ public class MovieController {
         return movieService.deleteById(id);
     }
 
+//    @PatchMapping("/api/movies/{id}")
+//    public Movie updateMovieTitleById(@PathVariable("id") Long id, @RequestParam("title") String title){
+//        return movieService.updateMovieTitle(id,title);
+//    }
+
     @PatchMapping("/api/movies/{id}")
-    public Movie updateMovieTitleById(@PathVariable("id") Long id, @RequestParam("title") String title){
-        return movieService.updateMovieTitle(id,title);
+    public Movie updateMovieRatingById(@PathVariable("id") Long id, @RequestParam("stars") String stars){
+        return movieService.updateMovieRating(id,stars);
     }
 
 }

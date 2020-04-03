@@ -114,17 +114,17 @@ class MovieControllerTest {
     }
 
     @Test
-    public void updateMovieTitleByIdApiTest() throws Exception {
+    public void updateMovieRatingByIdApiTest() throws Exception {
         String url = "/api/movies/1";
-        String newTitle = "new title goes here";
+        String stars = "5";
 
-        when(movieService.updateMovieTitle(ArgumentMatchers.any(Long.class),ArgumentMatchers.any(String.class))).thenReturn(movie);
+        when(movieService.updateMovieRating(ArgumentMatchers.any(Long.class),ArgumentMatchers.any(String.class))).thenReturn(movie);
 
         mvc.perform(patch(url)
                 .contentType(MediaType.APPLICATION_JSON)
-                .param("title",newTitle))
+                .param("stars",stars))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.title").value(movie.getTitle()))
+                .andExpect(jsonPath("$.stars").value(movie.getStars()))
                 .andExpect(jsonPath("$.year").value(movie.getYear()))
                 .andDo(print());
     }

@@ -32,10 +32,10 @@ public class MovieService {
             throw new RuntimeException("Movie not found");
     }
 
-    public Movie updateMovieTitle(Long id, String updateTitle) {
+    public Movie updateMovieRating(Long id, String stars) {
         if(movieRepository.findById(id).isPresent()){
             Movie movie = movieRepository.findById(id).get();
-            movie.setTitle(updateTitle);
+            movie.setStars(stars);
             return movie;
         }else{
             throw new RuntimeException("Movie not found");

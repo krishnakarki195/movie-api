@@ -93,14 +93,14 @@ class MovieServiceTest {
     }
 
     @Test
-    public void updateMovieTitleTest(){
+    public void updateMovieRatingTest(){
 
-        String updateTitle = "New title updated";
+        String stars = "4";
         Movie oldMovie = movieService.save(m1);
-        Movie expected = movieService.updateMovieTitle(oldMovie.getId(), updateTitle);
+        Movie expected = movieService.updateMovieRating(oldMovie.getId(), stars);
 
-        assertEquals(updateTitle, expected.getTitle());
-        assertThrows(RuntimeException.class, ()-> movieService.updateMovieTitle(1000L, updateTitle));
+        assertEquals(stars, expected.getStars());
+        assertThrows(RuntimeException.class, ()-> movieService.updateMovieRating(1000L, stars));
 
     }
 
