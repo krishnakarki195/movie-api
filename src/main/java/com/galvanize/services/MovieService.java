@@ -32,6 +32,15 @@ public class MovieService {
             throw new RuntimeException("Movie not found");
     }
 
+
+    public Movie getByImdbid(String imdbid) {
+        Movie movie = movieRepository.findByimdbId(imdbid);
+        if(movie != null)
+            return movie;
+        else
+            throw new RuntimeException("Movie not found");
+    }
+
     public Movie updateMovieRating(Long id, String stars) {
         if(movieRepository.findById(id).isPresent()){
             Movie movie = movieRepository.findById(id).get();

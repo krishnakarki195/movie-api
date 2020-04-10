@@ -88,6 +88,20 @@ class MovieControllerTest {
     }
 
     @Test
+    public void findByImdbIdMovieApiTest() throws Exception {
+        String url = "/api/movies/imdbid/tt3417334";
+
+        when(movieService.getByImdbid(ArgumentMatchers.any(String.class))).thenReturn(movie);
+
+        mvc.perform(get(url)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(movie.getId()))
+                .andExpect((jsonPath("$.title").value(movie.getTitle())))
+                .andDo(print());
+    }
+
+    @Test
     public void findByIdMovieApiTest() throws Exception {
         String url = "/api/movies/1";
 

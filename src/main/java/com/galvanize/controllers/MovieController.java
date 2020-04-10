@@ -28,6 +28,11 @@ public class MovieController {
         return movieService.getById(id).get();
     }
 
+    @GetMapping(value = "/api/movies/imdbid/{imdbid}")
+    public Movie getByImdbid(@PathVariable("imdbid") String imdbid){
+        return movieService.getByImdbid(imdbid);
+    }
+
     @DeleteMapping("/api/movies/{id}")
     public boolean deleteById(@PathVariable("id") Long id){
         return movieService.deleteById(id);
