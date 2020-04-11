@@ -48,8 +48,8 @@ class MovieControllerTest {
 
     @BeforeEach
     public void setupTestData(){
-        List<String> m1_actors = Arrays.asList("Dean Cain", "Robin Givens", "Tamara Goodwin", "Matt Mercer");
-        List<String> m1_director = Arrays.asList("James Kondelik", "Jon Kondelik");
+        String m1_actors = "Dean Cain, Robin Givens, Tamara Goodwin, Matt Mercer";
+        String m1_director = "James Kondelik, Jon Kondelik";
         movie = new Movie("tt3417334",
                 m1_actors,
                 m1_director,
