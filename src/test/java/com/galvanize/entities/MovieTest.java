@@ -20,8 +20,8 @@ class MovieTest {
     @Test
     public void movieObjParameterConstructorTest(){
         String imdb_id = "imdb_123";
-        List<String> actors = new ArrayList<>();
-        List<String> director = new ArrayList<>();
+        String actors = "";
+        String director = "";
         String title = "Movie Title";
         String year = "2016";
         Date releasedDate = Date.valueOf(LocalDate.of(1962, 11, 16));

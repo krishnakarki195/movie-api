@@ -12,17 +12,17 @@ WORKDIR /app
 COPY --from=build build/libs/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 EXPOSE 8080
+
 # Build docker image
-# $ docker build -t movieservice .
-#
+    # $ docker build -t movieservice .
+
 # Deploy movie service locally
-# $ run -p 8080:8080 movieservice
-# should be available at http://localhost:8080/api/jokes
-#
+    # $ run -p 8080:8080 movieservice
+    # should be available at http://localhost:8080/api/movies
+
 # Push to dockerhub
-# $ docker login
-# $ docker tag jokeservice krishnakarki/movieservice
-# $ docker push krishnakarki/movieservice
-#
+    # $ docker login
+    # $ docker tag movieservice krishnakarki/movieservice
+    # $ docker push krishnakarki/movieservice
 # Retrieve the image from docker hub
-# $ docker pull krishnakarki/movieservice
+    # $ docker pull krishnakarki/movieservice
