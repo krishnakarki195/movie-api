@@ -2,7 +2,6 @@ package com.galvanize.entities;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -17,11 +16,9 @@ public class Movie {
     private String imdbId;
 
     @Column(name="actors")
-    //@ElementCollection(targetClass=String.class)
     private String actors;
 
     @Column(name= "director")
-    //@ElementCollection(targetClass=String.class)
     private String director;
 
     @Column(name ="title")
